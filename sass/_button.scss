@@ -37,7 +37,7 @@
         }
     }
 
-    &--after{
+    &::after{
         content:"";
         display:inline-block;
         height:100%;
@@ -51,9 +51,10 @@
     }
 
     &--animated{
-        animation: moveInBottom 0.5s ease-out .75s;
+        animation: moveInBottom 1.5s ease-out 1.5s;
         animation-fill-mode:backwards;
     }
+    
 }
 
 .btn-text{

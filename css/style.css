@@ -18,9 +18,18 @@ body {
   min-height: 100vh;
   color: var(--color-blue-dark-2); }
 
+.animated--reverse {
+  animation: moveInRight 0.5s ease-out .75s;
+  animation-fill-mode: forwards; }
+
 .container {
   max-width: 120rem;
   margin: 3rem auto; }
+
+.services {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr; }
 
 .navigation__checkbox {
   display: none; }
@@ -139,14 +148,20 @@ body {
   background-image: linear-gradient(to right bottom, rgba(236, 154, 154, 0.8), rgba(230, 57, 70, 0.8)), url(../img/lambeth.jpg);
   background-size: cover;
   background-position: top;
+  transition: all .75s;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
   .header__logo-box {
     position: absolute;
     top: 4rem;
-    left: 4rem; }
+    left: 4rem;
+    animation: appearAndSet 1s ease-out .75s;
+    animation-fill-mode: backwards; }
   .header__logo {
-    height: 25rem; }
+    height: 25rem;
+    opacity: 1;
+    animation: growShrink 1s ease-out .75s;
+    animation-fill-mode: backwards; }
   .header__text-box {
     position: absolute;
     top: 40%;
@@ -200,7 +215,7 @@ body {
   .btn--white::after {
     background-color: #f1faee; }
 
-.btn--after {
+.btn::after {
   content: "";
   display: inline-block;
   height: 100%;
@@ -213,7 +228,7 @@ body {
   transition: all .4s; }
 
 .btn--animated {
-  animation: moveInBottom 0.5s ease-out .75s;
+  animation: moveInBottom 1.5s ease-out 1.5s;
   animation-fill-mode: backwards; }
 
 .btn-text:link, .btn-text:visited {
@@ -248,9 +263,9 @@ body {
 @keyframes moveInRight {
   0% {
     opacity: 0;
-    transform: translateX(1rem); }
+    transform: translateX(10rem); }
   80% {
-    transform: translateX(-1rem); }
+    transform: translateX(-10rem); }
   100% {
     opacity: 1;
     transform: translate(0); } }
@@ -262,3 +277,24 @@ body {
   100% {
     opacity: 1;
     transform: translate(0); } }
+
+@keyframes appearAndSet {
+  0% {
+    top: 50%;
+    left: 50%;
+    z-index: 1; }
+  100% {
+    top: 4rem;
+    left: 4rem;
+    z-index: 1; } }
+
+@keyframes growShrink {
+  0% {
+    opacity: 0;
+    height: 1rem; }
+  50% {
+    opacity: 1;
+    height: 80rem; }
+  100% {
+    opacity: 1;
+    height: 25rem; } }
