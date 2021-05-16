@@ -1,0 +1,34 @@
+// Color Palette
+$color-primary-red-light: #ec9a9a;
+$color-primary-red-dark: #e63946;
+
+$color-blue-light-1: #f1faee;
+$color-blue-light-2: #a8dadc;
+
+$color-blue-dark-1: #457b9d;
+$color-blue-dark-2: #1d3557;
+
+*{
+    margin:0;
+    padding:0;
+}
+
+*,
+*::before,
+*::after{
+    box-sizing: inherit;
+}
+
+html{
+    box-sizing:border-box;
+    font-size: 62.5%; //1rem = 10px, 10px / 16 = 62.5%
+}
+
+body{
+    font-family: 'El Messiri', sans-serif;
+    font-weight:400;
+    line-height: 1.6;    
+    min-height:100vh;
+
+    color: var(--color-blue-dark-2);
+}
