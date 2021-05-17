@@ -3,9 +3,44 @@
     margin: 3rem auto;
 }
 
-.services{
+.services{    
     display:grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-rows: repeat(6,1fr);
+    grid-template-columns: repeat(6,1fr);
+    font-size:1.5rem;
+    height:50vh;
+    background-size:cover;
+    align-items:stretch;
+    grid-gap:30px;
+    justify-content: space-around;
+
+    &__text{
+        grid-row: 2 / span 4;
+        grid-column: 2 / span 2;
+        background-color: $color-blue-dark-1;
+        align-self: stretch;
+        text-align: center;
+        
+    }
+    &__image{
+        
+        grid-row: 2 / span 4;
+        grid-column: 4 / -1;
+        background-color: $color-primary-red-light;
+        width:100%;
+        height:100%;
+        // justify-self: center;
+        align-self:center;
+    }
+}
+.service-areas{
+    grid-row: 2 / span 1;
+}
+.pricing{
+    grid-row: 3 / span 1;
+}
+.contact{
+    grid-row: 4 / span 1;
 }
 
