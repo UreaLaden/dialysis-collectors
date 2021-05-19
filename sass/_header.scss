@@ -10,13 +10,14 @@
     background-size:cover;
     background-position:top;
     transition: all .75s;
+    position:relative;
 
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
     &__logo-box{
         position:absolute;
-        top: 4rem;
-        left:4rem;
+        top: 2%;
+        left:2%;
         animation:appearAndSet 1s ease-out .75s;
         animation-fill-mode:backwards;
     }
