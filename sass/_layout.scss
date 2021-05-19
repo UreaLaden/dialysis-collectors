@@ -5,33 +5,48 @@
 
 .services{    
     display:grid;
-    grid-template-rows: 1fr;
-    grid-template-rows: repeat(6,1fr);
-    grid-template-columns: repeat(6,1fr);
+    grid-template-rows: repeat(2,1fr);
+    grid-template-columns: repeat(2,1fr);
     font-size:1.5rem;
-    height:50vh;
-    background-size:cover;
-    align-items:stretch;
-    grid-gap:30px;
-    justify-content: space-around;
-
+    background-color: $color-grey-light-1;
+    margin-bottom: 10%;
     &__text{
-        grid-row: 2 / span 4;
-        grid-column: 2 / span 2;
-        background-color: $color-blue-dark-1;
-        align-self: stretch;
-        text-align: center;
         
+        grid-row: 1 / span 2;
+        grid-column: 1 / 2;
+        text-align: center;        
+        align-self:center;
+       
+
+       
+       
     }
     &__image{
-        
-        grid-row: 2 / span 4;
-        grid-column: 4 / -1;
-        background-color: $color-primary-red-light;
+        background-color: $color-primary-red-dark;
+        grid-row: 1/-1;
+        grid-column: 2/-1;
         width:100%;
-        height:100%;
-        // justify-self: center;
-        align-self:center;
+        background-image: linear-gradient(
+            to right bottom,
+            rgba($color-primary-red-dark,.5),rgba($color-blue-dark-2,.5)),
+            url(../img/bg-service.jpg);
+        background-size:cover;
+
+        display:grid;
+        grid-template-rows: repeat(6,1fr);
+        grid-template-columns: repeat(6,1fr);
+
+        &--1{
+            grid-row: 2 / span 4;
+            grid-column: 2 / span 4;            
+        }
+        &--2{
+            grid-row: 3 / span 3;
+            grid-column: 1 / span 3;
+            box-shadow: 0 2rem 5rem rgba(#000,.2);
+            z-index: 20;
+            margin-left: -12%;
+        }        
     }
 }
 .service-areas{
@@ -44,3 +59,182 @@
     grid-row: 4 / span 1;
 }
 
+.heading-2{
+            
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    background-image: linear-gradient(to right ,$color-primary-red-dark, $color-blue-dark-2 );
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    letter-spacing: .2rem;
+}
+
+.process{
+    display:grid;
+    grid-template-rows: max-content 52rem;
+    grid-template-columns: repeat(3,1fr) ;
+    height: 50vh;
+    grid-column-gap: 5rem;
+    margin-bottom: 10%;
+    
+    &__header{
+        grid-row:1/2;
+        grid-column: 1 / -1;
+        justify-self: center;
+        align-self: center;
+    }
+
+    &__card{
+        padding-top:5rem;
+        perspective: 150rem;
+        -moz-perspective: 150rem;
+        position:relative;
+
+        &__side{
+                transition:all .8s ease;
+                backface-visibility: hidden;
+                border-radius: 3px;
+                overflow:hidden;
+                box-shadow: 0 1.5rem 4rem rgba(#000,.15);
+                width:100%;
+                height:100%;
+                display:grid;
+                grid-template-rows: repeat(5,1fr);
+                grid-template-columns: repeat(5,1fr);
+                position:absolute;
+                top:0;
+                left:0;
+                
+
+            &--icon{
+                grid-row: 1 / span 2;
+                grid-column: 1 / span 2;
+                margin-left: 10%;
+                margin-top: 25%;
+                fill:url(#my-gradient) rgba($color-primary-red-dark,.5);
+                
+            }
+            &--text{
+                grid-row: 3 / span 2;
+                grid-column: 1 / -1;
+                align-self: center;
+                text-align: center;
+                font-size: 2rem;
+                margin-top: 10%;
+            }
+            &--front{
+                background-image: linear-gradient(to right bottom ,#fff,$color-blue-dark-1); 
+                text-align: center;
+            }
+            &--back{
+                transform: rotateY(180deg); //revert to 180
+                grid-row: 2 / -1;
+
+                &-1
+                {
+                    background-image: linear-gradient(
+                    to right bottom,
+                    $color-blue-dark-1,
+                    $color-primary-red-dark );
+                }
+                &-2
+                {
+                    background-image: linear-gradient(
+                    to right bottom,
+                    $color-blue-dark-1,
+                    $color-blue-dark-2 );
+                }
+                &-3
+                {
+                    background-image: linear-gradient(
+                    to right bottom,
+                    $color-secondary-light,
+                    $color-secondary-dark );
+                }
+            } 
+            &--details
+            {
+                grid-row: 1 / -1;
+                grid-column: 1 / -1;
+                align-self: center;
+                display:grid;
+                grid-template-rows: repeat(6,1fr);
+                grid-template-columns: repeat(6,1fr);
+                margin-top: 5%;
+
+                p{
+                    grid-row: 4 / 5;
+                    grid-column: 1 / -1;
+                    
+                }
+                a{
+                    grid-row: -3 / -2;
+                    grid-column: 2 / -2;
+                    margin-top: 3%;
+                    text-align: center;
+                    align-self: center;
+                }
+                
+            }                                        
+    }
+    &:hover &__side--front{
+        transform:rotateY(-180deg);
+    }
+    &:hover &__side--back{
+        transform:rotateY(0);
+    }
+
+    &__pictures{
+        background-size:cover;
+        height:23rem;
+        background-blend-mode: screen;
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        grid-column: 1 / -1;
+        &--1{
+            background-image: linear-gradient(
+                to right bottom,
+                $color-blue-dark-1,
+                $color-primary-red-dark
+            ),
+            url(../img/lon-1.jpg);
+        }
+        &--2{            
+            background-image: linear-gradient(
+                to right bottom,
+                $color-blue-dark-1,
+                $color-blue-dark-2
+            ),
+            url(../img/lon-2.jpg);
+        }
+        &--3{
+            background-image: linear-gradient(
+                to right bottom,
+                $color-secondary-light,
+                $color-secondary-dark
+            ),
+            url(../img/lon-3.jpg);
+        }
+
+    }
+}
+
+   
+}
+.p--text{
+    padding-left: 10%;
+    padding-right:10%;
+    font-size: 2.5rem;
+    text-shadow: 1px 1px rgba(#000,.5);
+    &--blue{
+        color:$color-blue-dark-1;
+        
+    }
+    &--white{
+        color:#fff;
+    }
+}

@@ -16,7 +16,7 @@ body {
   font-weight: 400;
   line-height: 1.6;
   min-height: 100vh;
-  background-color: #f7f7f7;
+  background-color: #fff;
   color: var(--color-blue-dark-2); }
 
 .animated--reverse {
@@ -29,28 +29,35 @@ body {
 
 .services {
   display: grid;
-  grid-template-rows: 1fr;
-  grid-template-rows: repeat(6, 1fr);
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   font-size: 1.5rem;
-  height: 50vh;
-  background-size: cover;
-  align-items: stretch;
-  grid-gap: 30px;
-  justify-content: space-around; }
+  background-color: #f9f7f6;
+  margin-bottom: 10%; }
   .services__text {
-    grid-row: 2 / span 4;
-    grid-column: 2 / span 2;
-    background-color: #457b9d;
-    align-self: stretch;
-    text-align: center; }
-  .services__image {
-    grid-row: 2 / span 4;
-    grid-column: 4 / -1;
-    background-color: #ec9a9a;
-    width: 100%;
-    height: 100%;
+    grid-row: 1 / span 2;
+    grid-column: 1 / 2;
+    text-align: center;
     align-self: center; }
+  .services__image {
+    background-color: #e63946;
+    grid-row: 1/-1;
+    grid-column: 2/-1;
+    width: 100%;
+    background-image: linear-gradient(to right bottom, rgba(230, 57, 70, 0.5), rgba(29, 53, 87, 0.5)), url(../img/bg-service.jpg);
+    background-size: cover;
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(6, 1fr); }
+    .services__image--1 {
+      grid-row: 2 / span 4;
+      grid-column: 2 / span 4; }
+    .services__image--2 {
+      grid-row: 3 / span 3;
+      grid-column: 1 / span 3;
+      box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
+      z-index: 20;
+      margin-left: -12%; }
 
 .service-areas {
   grid-row: 2 / span 1; }
@@ -60,6 +67,119 @@ body {
 
 .contact {
   grid-row: 4 / span 1; }
+
+.heading-2 {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  background-image: linear-gradient(to right, #e63946, #1d3557);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: .2rem; }
+
+.process {
+  display: grid;
+  grid-template-rows: max-content 52rem;
+  grid-template-columns: repeat(3, 1fr);
+  height: 50vh;
+  grid-column-gap: 5rem;
+  margin-bottom: 10%; }
+  .process__header {
+    grid-row: 1/2;
+    grid-column: 1 / -1;
+    justify-self: center;
+    align-self: center; }
+  .process__card {
+    padding-top: 5rem;
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+    position: relative; }
+    .process__card__side {
+      transition: all .8s ease;
+      backface-visibility: hidden;
+      border-radius: 3px;
+      overflow: hidden;
+      box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-rows: repeat(5, 1fr);
+      grid-template-columns: repeat(5, 1fr);
+      position: absolute;
+      top: 0;
+      left: 0; }
+      .process__card__side--icon {
+        grid-row: 1 / span 2;
+        grid-column: 1 / span 2;
+        margin-left: 10%;
+        margin-top: 25%;
+        fill: url(#my-gradient) rgba(230, 57, 70, 0.5); }
+      .process__card__side--text {
+        grid-row: 3 / span 2;
+        grid-column: 1 / -1;
+        align-self: center;
+        text-align: center;
+        font-size: 2rem;
+        margin-top: 10%; }
+      .process__card__side--front {
+        background-image: linear-gradient(to right bottom, #fff, #457b9d);
+        text-align: center; }
+      .process__card__side--back {
+        transform: rotateY(180deg);
+        grid-row: 2 / -1; }
+        .process__card__side--back-1 {
+          background-image: linear-gradient(to right bottom, #457b9d, #e63946); }
+        .process__card__side--back-2 {
+          background-image: linear-gradient(to right bottom, #457b9d, #1d3557); }
+        .process__card__side--back-3 {
+          background-image: linear-gradient(to right bottom, #ffb900, #ff7730); }
+      .process__card__side--details {
+        grid-row: 1 / -1;
+        grid-column: 1 / -1;
+        align-self: center;
+        display: grid;
+        grid-template-rows: repeat(6, 1fr);
+        grid-template-columns: repeat(6, 1fr);
+        margin-top: 5%; }
+        .process__card__side--details p {
+          grid-row: 4 / 5;
+          grid-column: 1 / -1; }
+        .process__card__side--details a {
+          grid-row: -3 / -2;
+          grid-column: 2 / -2;
+          margin-top: 3%;
+          text-align: center;
+          align-self: center; }
+    .process__card:hover .process__card__side--front {
+      transform: rotateY(-180deg); }
+    .process__card:hover .process__card__side--back {
+      transform: rotateY(0); }
+    .process__card__pictures {
+      background-size: cover;
+      height: 23rem;
+      background-blend-mode: screen;
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px;
+      grid-column: 1 / -1; }
+      .process__card__pictures--1 {
+        background-image: linear-gradient(to right bottom, #457b9d, #e63946), url(../img/lon-1.jpg); }
+      .process__card__pictures--2 {
+        background-image: linear-gradient(to right bottom, #457b9d, #1d3557), url(../img/lon-2.jpg); }
+      .process__card__pictures--3 {
+        background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(../img/lon-3.jpg); }
+
+.p--text {
+  padding-left: 10%;
+  padding-right: 10%;
+  font-size: 2.5rem;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.5); }
+  .p--text--blue {
+    color: #457b9d; }
+  .p--text--white {
+    color: #fff; }
 
 .navigation__checkbox {
   display: none; }
@@ -174,6 +294,7 @@ body {
   transform: rotate(225deg); }
 
 .header {
+  margin-bottom: 5%;
   height: 95vh;
   background-image: linear-gradient(to right bottom, rgba(236, 154, 154, 0.8), rgba(230, 57, 70, 0.8)), url(../img/lambeth.jpg);
   background-size: cover;
@@ -243,6 +364,12 @@ body {
   background-color: #f1faee;
   color: #1d3557; }
   .btn--white::after {
+    background-color: #f1faee; }
+
+.btn--blue {
+  background-color: #457b9d;
+  color: #fff; }
+  .btn--blue::after {
     background-color: #f1faee; }
 
 .btn::after {
