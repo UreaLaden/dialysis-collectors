@@ -29,24 +29,29 @@ body {
 
 .services {
   display: grid;
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: min-content repeat(2, 1fr);
   grid-template-columns: repeat(2, 1fr);
   font-size: 1.5rem;
   background-color: #f9f7f6;
-  margin-bottom: 10%;
-  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2); }
+  margin-bottom: 5%;
+  height: 40vh; }
+  .services__header {
+    grid-row: 1 / span 1;
+    grid-column: 1 / span 2;
+    text-align: center; }
   .services__text {
-    grid-row: 1 / span 2;
+    grid-row: 2 / span 2;
     grid-column: 1 / 2;
     text-align: center;
     align-self: center; }
   .services__image {
     background-color: #e63946;
-    grid-row: 1/-1;
+    grid-row: 2/-1;
     grid-column: 2/-1;
     width: 100%;
     background-image: linear-gradient(to right bottom, rgba(230, 57, 70, 0.5), rgba(29, 53, 87, 0.5)), url(../img/bg-service.jpg);
     background-size: cover;
+    box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.3);
     display: grid;
     grid-template-rows: repeat(6, 1fr);
     grid-template-columns: repeat(6, 1fr); }
@@ -79,18 +84,27 @@ body {
   color: transparent;
   letter-spacing: .2rem; }
 
+.heading-secondary {
+  text-align: center; }
+
 .process {
   display: grid;
-  grid-template-rows: max-content 52rem;
+  grid-template-rows: max-content minmax(40vh, 1fr) 1fr;
   grid-template-columns: repeat(3, 1fr);
-  height: 50vh;
+  height: 40vh;
   grid-column-gap: 5rem;
-  margin-bottom: 10%; }
+  grid-row-gap: 2rem;
+  margin-bottom: 15%; }
   .process__header {
-    grid-row: 1/2;
+    grid-row: 1 / 2;
     grid-column: 1 / -1;
     justify-self: center;
     align-self: center; }
+  .process__text {
+    grid-row: 3 / -1;
+    grid-column: 1 / -1;
+    justify-self: center;
+    border: 2px solid #e63946; }
   .process__card {
     padding-top: 5rem;
     perspective: 150rem;
@@ -184,23 +198,77 @@ body {
 
 .service-areas {
   display: grid;
-  grid-template-rows: max-content repeat(2, 23rem);
+  grid-template-rows: max-content repeat(2, 1fr);
   grid-template-columns: repeat(6, 1fr);
   grid-column-gap: 3rem;
-  background-image: linear-gradient(#fff, #a8dadc); }
-  .service-areas__header {
-    grid-row: 1 / 2;
-    grid-column: 3 / 6;
-    align-self: center; }
+  background-image: linear-gradient(to right bottom, #fff, #457b9d);
+  height: 40vh;
+  margin-bottom: 10%; }
   .service-areas__image {
     background-image: url(../img/lambeth.jpg);
     background-size: cover;
-    grid-row: 2 / -1;
-    grid-column: 1 / span 3; }
+    grid-row: 1 / -1;
+    grid-column: 1 / span 3;
+    box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.3); }
   .service-areas__text {
-    grid-row: 2 / -1;
+    grid-row: 1 / -1;
     grid-column: 4 / -1;
     align-self: center; }
+
+.contact {
+  padding: 10%;
+  background-image: linear-gradient(to right bottom, #e63946, #1d3557); }
+  .contact__book {
+    background-image: linear-gradient(105deg, rgba(249, 247, 246, 0.9) 0, rgba(249, 247, 246, 0.8) 55%, transparent 50%), url(../img/bridge.jpg);
+    background-size: cover;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.5);
+    border-radius: 3px; }
+  .contact__form {
+    width: 50%;
+    padding: 6rem; }
+
+.form__group:not(:last-child) {
+  margin-bottom: 2rem; }
+
+.form__input {
+  font-size: 1.5rem;
+  font-family: inherit;
+  padding: 1rem;
+  border-radius: 2px;
+  color: inherit;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  border-bottom: 3px solid transparent;
+  width: 90%;
+  display: block;
+  transition: all .3s; }
+  .form__input:focus {
+    outline: none;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5);
+    border-bottom: 3px solid #457b9d; }
+  .form__input:focus:invalid {
+    border-bottom: 3px solid #e63946; }
+  .form__input::-webkit-input-placeholder {
+    color: #aaa; }
+
+.form__group--btn {
+  margin-left: 10%;
+  margin-top: 5%; }
+
+.form__header {
+  padding-bottom: 5%; }
+
+.form__label {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-left: .5rem;
+  display: block;
+  transition: all .3s; }
+
+.form__input:placeholder-shown + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-4rem); }
 
 .navigation__checkbox {
   display: none; }
@@ -393,6 +461,12 @@ body {
   color: #fff; }
   .btn--blue::after {
     background-color: #f1faee; }
+
+.btn--red {
+  color: #fff;
+  background-image: linear-gradient(#e63946, #1d3557); }
+  .btn--red::after {
+    background-image: linear-gradient(#e63946, #1d3557); }
 
 .btn::after {
   content: "";

@@ -44,6 +44,14 @@
             background-color: $color-blue-light-1;
         }
     }
+    &--red{
+        color: #fff;
+        background-image: linear-gradient($color-primary-red-dark,$color-blue-dark-2);
+        
+        &::after{
+            background-image: linear-gradient($color-primary-red-dark,$color-blue-dark-2);
+        }
+    }
 
     &::after{
         content:"";
