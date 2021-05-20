@@ -252,7 +252,7 @@ body {
     color: #aaa; }
 
 .form__group--btn {
-  margin-left: 10%;
+  margin-left: 1%;
   margin-top: 5%; }
 
 .form__header {
@@ -269,6 +269,9 @@ body {
   opacity: 0;
   visibility: hidden;
   transform: translate(-4rem); }
+
+.footer {
+  background-image: linear-gradient(to right bottom, #1d3557, #457b9d); }
 
 .navigation__checkbox {
   display: none; }
