@@ -16,7 +16,7 @@ html {
       font-size: 50%; } }
   @media (max-width: 37.5em) {
     html {
-      font-size: 40%; } }
+      font-size: 30%; } }
 
 body {
   font-family: 'El Messiri', sans-serif;
@@ -113,8 +113,8 @@ body {
       margin-right: 5rem; } }
   @media (max-width: 37.5em) {
     .process {
-      margin-left: 16rem;
-      margin-right: 16rem;
+      margin-left: 5rem;
+      margin-right: 5rem;
       margin-bottom: 15%;
       height: 100%;
       grid-template-rows: max-content repeat(3, minmax(40vh, 1fr)) max-content;
