@@ -23,10 +23,10 @@
 
         <nav class="navigation__nav">
             <ul class="navigation__list">
-                <li class="navigation__item"><a href="#services" class="navigation__link"><span>01</span>Services</a></li>
-                <li class="navigation__item"><a href="#service-areas" class="navigation__link"><span>02</span>Coverage Areas</a></li>
-                <li class="navigation__item"><a href="#pricing" class="navigation__link"><span>03</span>Pricing</a></li>
-                <li class="navigation__item"><a href="#contact" class="navigation__link"><span>04</span>Contact</a></li>
+                <li class="navigation__item" id="nav-item"><a href="#services" class="navigation__link" id="nav-item"><span>01</span>Services</a></li>
+                <li class="navigation__item" id="nav-item"><a href="#service-areas" class="navigation__link"><span>02</span>Coverage Areas</a></li>
+                <li class="navigation__item" id="nav-item"><a href="#pricing" class="navigation__link" ><span>03</span>Pricing</a></li>
+                <li class="navigation__item" id="nav-item"><a href="#contact" class="navigation__link"><span>04</span>Contact</a></li>
             </ul>
         </nav>
     </nav>
@@ -44,22 +44,18 @@
             </div>
         </header>
         <main>
-            <section class="services" id="services">
+            <section id="services">
                 <div class="u-center-text u-margin-bottom-big">
-                    <h2 class="heading-secondary">
-
+                    <h2 class="heading-secondary heading-2">
+                        Our Services
                     </h2>
                 </div>
-                <div class="services__text"> 
-                    <h3 class="services__text heading-2">
-                        Our Services    
-                    </h3>
-                    <p class="u-center-text p--text p--text--blue">Recognizing the challenge of properly disposing of  Baxter boxes and Dialysis fluid containers, our team at Dialysis Box Collectors will periodically dispose of your empty Baxter boxes and peritoneal dialysys fluid plastics.
-                    </p>
-                </div>
-                    <div class="services__image">
-                    <!-- <img src="/img/box-re-1.png" alt="Box-2" class="services__image services__image--1"> -->
-                    <img src="/img/baxter-re-3.png" alt="Box-3" class="services__image services__image--2">
+                <div class="services">
+                    <div class="services__text"> 
+                        <p class="u-center-text p--text p--text--blue">Recognizing the challenge of properly disposing of  Baxter boxes and Dialysis fluid containers, our team at Dialysis Box Collectors will periodically dispose of your empty Baxter boxes and peritoneal dialysys fluid plastics.
+                        </p>
+                    </div>
+                    <div class="services__image">&nbsp;</div>
                 </div>
             </section>
             <section class="process">
@@ -145,14 +141,47 @@
                         </div>
                     </div>
                 </div>
+                <p class="process__text p--text p--text--blue">For the low monthly rate of &#163;40</p>
             </section>
-            <section class="service-areas">
-                <div class="service-areas__header heading-2">SERVICE AREAS</div>
-                <div class="service-areas__image">&nbsp;</div>
-                <div class="service-areas__text p--text p--text--blue">Dialysis Box Collectors LTD, founded in 2020 and based in South London, currently services Lambeth areas SW2, SW4, SW8, SW9, SW12, and SW16. </div>
+            <section id="service-areas">
+                <div class="heading-secondary heading-2">SERVICE AREAS</div>
+                <div class="service-areas">
+                    <div class="service-areas__image">&nbsp;</div>
+                    <div class="service-areas__text p--text p--text--white">Dialysis Box Collectors LTD, founded in 2020 and based in South London, currently services Lambeth areas SW2, SW4, SW8, SW9, SW12, and SW16. </div>
+                </div>
+                </section>
+            <section class ="contact" id="contact">
+                <div class="contact__book">
+                    <div class="contact__form">
+                        <form action="#" class="form">
+                            <div class="form__header heading-secondary heading-2">Contact Us</div>
+                            <div class="form__group">
+                                <input type="text" class="form__input" id="name" placeholder="Full Name" required>
+                                <label for="name" class="form__label">Full Name</label>
+                            </div>
+                            <div class="form__group">
+                                <input type="text" class="form__input" id="email" placeholder="Email Address" required>
+                                <label for="email" class="form__label">Email Address</label>
+                            </div>
+                            <div class="form__group">
+                                <input type="text" class="form__input" id="phone" placeholder="Phone Number" required>
+                                <label for="phone" class="form__label">Phone Number</label>
+                            </div>
+                            <div class="form__group">
+                                <input type="text" class="form__input" id="address" placeholder="Physical Address" required>
+                                <label for="address" class="form__label">Physical Address</label>
+                            </div>
+                            <div class="form__group">
+                                <textarea class="form__input" name="" id="message" cols="30" rows="5" placeholder="Enter your message"></textarea>
+                            </div>
+                            <div class="form__group">
+                                <button type="submit" class="form__group--btn btn btn--animated btn--red">Schedule Your pickup</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
             </section>
-            <section class="pricing">PRICING</section>
-            <section class="contact">CONTACT US</section>
             <svg style="width:0;height:0;position:absolute;" aria-hidden="true" focusable="false">
                 <linearGradient  id="my-gradient" x2="1" y2="1">
                     <stop offset="0%" stop-color="#e63946"/>                    
@@ -161,8 +190,25 @@
             </svg>
         </main>
         <footer class="footer">
-
+            <div class="footer__logo">&nbsp;</div>
+            <div class="footer__links">
+                <ul>
+                    <li>Home</li>
+                    <li>Services</li>
+                    <li>Process</li>
+                    <li>Service Areas</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+            <div class="footer_company-details">
+                <span>Dialysis Box Collectors Ltd</span>
+                <span>57 Harleyford Road, London SE11 5AX</span>
+                <span>Company Registration Number: 12778323</span>
+                <span>Waste Carrier License: CBDU388555</span>
+            </div>
+            <p class="copyright">&copy; Dialysis Box Collectors LTD Copyright 2021 All rights reserved. Developed by <a href="https://www.linkedin.com/in/leaundrae-mckinney/">Leaundrae Mckinney</a> </p>
         </footer>
     </div>
+    <script src="./js/app.js"></script>
 </body>
 </html> 
