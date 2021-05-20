@@ -63,6 +63,9 @@
     100%{
         opacity: 1;
         height:25rem;
+        @media only screen and (max-width: $bp-largest){
+            height:20rem;
+        }
     }
 }
 
