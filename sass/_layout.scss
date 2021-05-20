@@ -1,6 +1,11 @@
 .container{
     max-width: 120rem;
     margin: 3rem auto;
+
+    @include respond(tab-land){
+        margin: 0;
+        min-width: 100%;
+    }
 }
 
 .services{    

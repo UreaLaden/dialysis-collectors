@@ -5,11 +5,15 @@
 *,
 *::before,
 *::after {
-  box-sizing: inherit; }
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0; }
 
 html {
-  box-sizing: border-box;
   font-size: 62.5%; }
+  @media (max-width: 37.5em) {
+    html {
+      font-size: 50%; } }
 
 body {
   font-family: 'El Messiri', sans-serif;
@@ -17,7 +21,8 @@ body {
   line-height: 1.6;
   min-height: 100vh;
   background-color: #fff;
-  color: var(--color-blue-dark-2); }
+  color: var(--color-blue-dark-2);
+  box-sizing: border-box; }
 
 .animated--reverse {
   animation: moveInRight 0.5s ease-out .75s;
@@ -26,6 +31,10 @@ body {
 .container {
   max-width: 120rem;
   margin: 3rem auto; }
+  @media (max-width: 62.5em) {
+    .container {
+      margin: 0;
+      min-width: 100%; } }
 
 .services {
   display: grid;
@@ -462,6 +471,9 @@ body {
     opacity: 1;
     animation: growShrink 1s ease-out .75s;
     animation-fill-mode: backwards; }
+    @media only screen and (max-width: 75em) {
+      .header__logo {
+        height: 20rem; } }
   .header__text-box {
     position: absolute;
     top: 40%;
@@ -609,4 +621,6 @@ body {
     height: 80rem; }
   100% {
     opacity: 1;
-    height: 25rem; } }
+    height: 25rem;
+    @media only screen and (max-width: 75em) {
+      height: 20rem; } } }
