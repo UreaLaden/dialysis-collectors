@@ -4,7 +4,7 @@
 
     @include respond(tab-land){
         margin: 0;
-        min-width: 100%;
+        width:100vw;
     }
 }
 
@@ -384,6 +384,9 @@
     }
     &__header{
         padding-bottom:5%;
+        @include respond(phone){
+
+        }
     }
 
     &__label{
