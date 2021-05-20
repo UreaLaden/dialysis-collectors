@@ -70,8 +70,11 @@ html{
     
     font-size: 62.5%; //1rem = 10px, 10px / 16 = 62.5%
     
-    @include respond(phone){
+    @include respond(tab-land){
         font-size: 50%;
+    }
+    @include respond(phone){
+        font-size: 40%;
     }
 }
 
